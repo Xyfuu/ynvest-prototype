@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>YNVEST — Interactive Prototype</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: { colors: {
+    "primary": "#00254d", "primary-container": "#003b73", "on-primary": "#ffffff",
+    "secondary": "#00658d", "secondary-container": "#41befd", "on-secondary-container": "#004b69",
+    "secondary-fixed": "#c6e7ff", "secondary-fixed-dim": "#81cfff",
+    "tertiary-fixed": "#ffddb8", "tertiary-fixed-dim": "#ffb95f", "tertiary-container": "#553400",
+    "on-tertiary-fixed": "#2a1700", "on-tertiary-container": "#e69300",
+    "surface": "#faf8ff", "surface-container": "#eaedff", "surface-container-low": "#f2f3ff",
+    "surface-container-high": "#e2e7ff", "surface-container-highest": "#dae2fd",
+    "surface-container-lowest": "#ffffff", "on-surface": "#131b2e", "on-surface-variant": "#434750",
+    "outline": "#737781", "outline-variant": "#c3c6d1"
+  }, fontFamily: { "sans": ["Plus Jakarta Sans", "sans-serif"] } } }
+};
+</script>
+<style>
+  body { background: linear-gradient(160deg, #0b1e3a 0%, #12315e 55%, #0b1e3a 100%); }
+  .phone-shell {
+    width: 412px; height: 862px; border-radius: 44px;
+    box-shadow: 0 40px 90px -20px rgba(0,0,0,.65), 0 0 0 10px #10151c, 0 0 0 12px #2a323d;
+    overflow: hidden; position: relative; background: #faf8ff;
+  }
+  .phone-shell iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .route-dot.active { background: #41befd; opacity: 1; }
+  .hud-coins { transition: transform .15s ease; }
+  .hud-coins.bump { transform: scale(1.12); }
+  @media (max-width: 480px) {
+    .phone-shell { width: 100vw; height: 100dvh; border-radius: 0; box-shadow: none; }
+    .side-note { display: none; }
+  }
+</style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 font-sans antialiased">
+
+<div class="flex items-center gap-10">
+  <!-- Phone frame -->
+  <div class="phone-shell">
+    <iframe id="app-frame" src="home.html" title="YNVEST app"></iframe>
+  </div>
+
+  <!-- Side rail: routes + live wallet -->
+  <div class="side-note w-56 text-white/90 flex flex-col gap-5">
+    <div>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="material-symbols-outlined text-secondary-fixed">account_balance</span>
+        <span class="font-bold tracking-tight">YNVEST Prototype</span>
+      </div>
+      <p class="text-xs text-white/60 leading-relaxed">Click anything in the phone — the whole app is connected. Coins are shared across pages.</p>
+    </div>
+
+    <div class="rounded-2xl bg-white/10 backdrop-blur p-3 flex items-center gap-2">
+      <span class="text-lg">🪙</span>
+      <div class="flex flex-col">
+        <span class="text-[10px] uppercase tracking-wider text-white/60 font-bold">Wallet</span>
+        <span class="font-extrabold tracking-tight hud-coins" id="hud-coins">2,450 Coins</span>
+      </div>
+    </div>
+
+    <nav class="flex flex-col gap-1" id="route-list">
+      <button data-route="home" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors text-left text-sm font-semibold">
+        <span class="material-symbols-outlined text-[18px]">home</span> Home
+      </button>
+      <button data-route="activity" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/10 transition-colors text-left text-sm">
+        <span class="material-symbols-outlined text-[18px]">receipt_long</span> Coin Wallet
+      </button>
+      <button data-route="missions" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/10 transition-colors text-left text-sm">
+        <span class="material-symbols-outlined text-[18px]">emoji_events</span> Missions
+      </button>
+      <button data-route="for-you" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/10 transition-colors text-left text-sm">
+        <span class="material-symbols-outlined text-[18px]">loyalty</span> Marketplace
+      </button>
+    </nav>
+
+    <button id="reset-state" class="mt-auto flex items-center gap-2 px-3 py-2 rounded-xl text-xs text-white/60 hover:text-white hover:bg-white/10 transition-colors">
+      <span class="material-symbols-outlined text-[16px]">restart_alt</span> Reset demo wallet
+    </button>
+
+    <div class="flex gap-1.5" id="route-dots">
+      <span class="route-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all"></span>
+      <span class="route-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all"></span>
+      <span class="route-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all"></span>
+      <span class="route-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var frame = document.getElementById('app-frame');
+  var ROUTES = {
+    'home':     'home.html',
+    'activity': 'activity.html',
+    'missions': 'missions.html',
+    'for-you':  'marketplace.html',
+    'reward-detail': 'reward-detail.html'
+  };
+  var LABELS = { 'home': 'Home', 'activity': 'Coin Wallet', 'missions': 'Missions', 'for-you': 'Marketplace', 'reward-detail': 'Reward Detail' };
+
+  function pageFromUrl(url) {
+    for (var key in ROUTES) if (url.indexOf(ROUTES[key]) !== -1) return key;
+    return 'home';
+  }
+
+  function currentRoute() {
+    var h = location.hash.replace(/^#\/?/, '').split('?')[0];
+    return ROUTES[h] ? h : 'home';
+  }
+
+  function navigate(route) {
+    if (!ROUTES[route]) route = 'home';
+    location.hash = '#/' + route;
+  }
+
+  function renderRoute(route) {
+    if (frame.getAttribute('data-route') === route) return;
+    frame.setAttribute('data-route', route);
+    frame.src = ROUTES[route];
+    document.querySelectorAll('#route-list button').forEach(function (b) {
+      var on = b.getAttribute('data-route') === route;
+      b.classList.toggle('bg-white/10', on);
+      b.classList.toggle('font-semibold', on);
+    });
+    var idx = Object.keys(ROUTES).indexOf(route);
+    document.querySelectorAll('#route-dots .route-dot').forEach(function (d, i) {
+      d.classList.toggle('active', i === Math.max(idx, 0));
+    });
+  }
+
+  document.querySelectorAll('#route-list button').forEach(function (b) {
+    b.addEventListener('click', function () { navigate(b.getAttribute('data-route')); });
+  });
+
+  window.addEventListener('hashchange', function () { renderRoute(currentRoute()); });
+
+  /* Messages from the app pages */
+  window.addEventListener('message', function (e) {
+    var d = e.data || {};
+    if (d.type === 'ynvest:navigate' && d.url) {
+      frame.src = d.url;
+      frame.setAttribute('data-route', pageFromUrl(d.url));
+      syncHash(pageFromUrl(d.url));
+      markRouteButtons(pageFromUrl(d.url));
+    }
+    if (d.type === 'ynvest:navigated' && d.coins != null) renderCoins(d.coins);
+  });
+
+  function syncHash(route) {
+    var want = '#/' + route;
+    if (location.hash !== want) history.replaceState(null, '', want);
+  }
+  function markRouteButtons(route) {
+    document.querySelectorAll('#route-list button').forEach(function (b) {
+      var on = b.getAttribute('data-route') === route;
+      b.classList.toggle('bg-white/10', on);
+      b.classList.toggle('font-semibold', on);
+    });
+  }
+
+  /* Live wallet HUD (reads localStorage written by bridge.js) */
+  var hud = document.getElementById('hud-coins');
+  function renderCoins(n) {
+    hud.textContent = Number(n).toLocaleString('en-US') + ' Coins';
+    hud.classList.add('bump');
+    setTimeout(function () { hud.classList.remove('bump'); }, 160);
+  }
+  setInterval(function () {
+    try {
+      var s = JSON.parse(localStorage.getItem('ynvest-proto-state') || 'null');
+      if (s) renderCoins(s.coins);
+    } catch (e) {}
+  }, 600);
+
+  /* Reset demo */
+  document.getElementById('reset-state').addEventListener('click', function () {
+    try { localStorage.removeItem('ynvest-proto-state'); } catch (e) {}
+    renderCoins(2450);
+    frame.src = frame.src; // reload current page
+  });
+
+  /* Deep links like index.html#/for-you?reward=kopi-voucher */
+  var hash = location.hash.replace(/^#\/?/, '');
+  var query = hash.split('?')[1] || '';
+  var base = currentRoute();
+  if (query) {
+    window.addEventListener('DOMContentLoaded', function () {
+      renderRoute(base);
+      frame.addEventListener('load', function once() {
+        frame.removeEventListener('load', once);
+        frame.contentWindow.postMessage({ type: 'ynvest:navigate', url: ROUTES[base] + '?' + query }, '*');
+      });
+    });
+  } else {
+    renderRoute(base);
+  }
+})();
+</script>
+</body>
+</html>

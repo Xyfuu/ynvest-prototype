@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#00254d", "on-error-container": "#93000a", "secondary-fixed": "#c6e7ff", "on-background": "#131b2e", "on-tertiary-container": "#e69300", "surface-bright": "#faf8ff", "on-primary": "#ffffff", "on-primary-fixed-variant": "#174780", "primary-container": "#003b73", "error-container": "#ffdad6", "outline": "#737781", "on-tertiary-fixed": "#2a1700", "surface-container-highest": "#dae2fd", "on-secondary-fixed": "#001e2d", "primary-fixed-dim": "#a7c8ff", "secondary-container": "#41befd", "surface-container": "#eaedff", "tertiary-fixed": "#ffddb8", "on-surface-variant": "#434750", "inverse-surface": "#283044", "inverse-on-surface": "#eef0ff", "on-primary-fixed": "#001c3b", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb95f", "on-surface": "#131b2e", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#653e00", "on-secondary": "#ffffff", "background": "#faf8ff", "on-secondary-fixed-variant": "#004c6b", "tertiary-container": "#553400", "surface": "#faf8ff", "outline-variant": "#c3c6d1", "on-error": "#ffffff", "on-primary-container": "#7fa7e5", "surface-container-low": "#f2f3ff", "inverse-primary": "#a7c8ff", "on-secondary-container": "#004b69", "error": "#ba1a1a", "surface-variant": "#dae2fd", "primary-fixed": "#d5e3ff", "secondary": "#00658d", "surface-tint": "#345f99", "tertiary": "#382000", "surface-container-high": "#e2e7ff", "surface-dim": "#d2d9f4", "secondary-fixed-dim": "#81cfff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1rem", "space-sm": "0.5rem", "space-xl": "1.5rem", "space-lg": "1rem", "space-xs": "0.25rem", "gutter": "1rem", "space-md": "0.75rem" }, fontFamily: { "display-lg": ["Plus Jakarta Sans"], "label-micro": ["Plus Jakarta Sans"], "display-balance": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"] }, fontSize: { "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "label-micro": ["9px", { "lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "700" }], "display-balance": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed" data-page="marketplace"><script src="bridge.js" defer></script><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,37,77,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="YNVEST Logo" class="h-8 w-auto object-contain" src="./logo.png"/><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-tight text-primary leading-none">YNVEST</span><span class="font-label-micro text-label-micro uppercase tracking-wider text-secondary font-bold">Digital Bank</span></div></div><div class="flex items-center gap-1"><a class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary rounded-full transition-colors" data-soon="Support Chat" href="#"><span class="material-symbols-outlined text-[22px]">support_agent</span></a><a class="w-11 h-11 relative flex items-center justify-center text-on-surface-variant hover:text-primary rounded-full transition-colors" data-soon="Notifications" href="#"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></a><div class="w-8 h-8 ml-1 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_6px_rgba(0,37,77,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-surface"><div class="flex flex-col w-full max-w-[430px] mx-auto px-margin space-y-space-md">
+<!-- Marketplace Contextual Subheader -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Go Back" data-go="home" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-primary active:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Rewards Marketplace</h1>
+</div>
+<!-- Coin Balance Pill (Live interactive badge) -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed shadow-sm active:scale-95 transition-transform cursor-pointer" data-go="activity">
+<span class="text-sm">🪙</span>
+<span class="font-label-lg text-label-lg font-extrabold text-on-tertiary-fixed tracking-tight" id="user-coin-balance" data-coins-balance>2,450</span>
+<span class="font-label-micro text-label-micro uppercase font-bold text-on-tertiary-fixed-variant">Coins</span>
+</div>
+</div>
+<!-- Search & Filter Bar -->
+<div class="flex items-center gap-space-sm">
+<div class="flex-1 flex items-center gap-space-sm px-space-md py-2.5 rounded-xl bg-surface-container-low shadow-sm focus-within:bg-surface-container-lowest focus-within:shadow-md transition-all">
+<span class="material-symbols-outlined text-outline text-[20px]">search</span>
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none min-w-0" id="marketplace-search" placeholder="Search vouchers, tickets, deals..." type="text"/>
+<button class="hidden text-outline hover:text-on-surface" id="clear-search" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<button aria-label="Filter Rewards" class="w-11 h-11 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shadow-sm active:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Hero Promotional Banner -->
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-primary-container to-secondary shadow-[0_8px_24px_rgba(0,37,77,0.18)] p-space-lg text-on-primary">
+<!-- Ambient glowing accents -->
+<div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-secondary-container/20 blur-2xl pointer-events-none"></div>
+<div class="absolute right-4 bottom-0 translate-y-2 opacity-90 pointer-events-none">
+<div class="relative w-28 h-28 flex items-center justify-center">
+<span class="text-[72px] drop-shadow-lg select-none">🎁</span>
+<div class="absolute top-1 right-2 text-2xl animate-bounce">🪙</div>
+</div>
+</div>
+<div class="relative z-10 max-w-[210px] space-y-space-xs">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-micro text-label-micro font-extrabold uppercase tracking-wide">
+<span class="material-symbols-outlined text-[13px]">local_fire_department</span>
+        Up to 50% Coin Discount
+      </div>
+<h2 class="font-headline-lg text-headline-lg text-on-primary leading-tight">Your Coins, Your Rewards</h2>
+<p class="font-body-md text-body-md text-on-primary-container leading-snug">Turn your everyday banking Coins into things you love.</p>
+<div class="pt-space-xs">
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-primary font-label-lg text-label-lg font-bold shadow-md hover:bg-surface-bright active:scale-95 transition-transform flex items-center gap-1" type="button" id="explore-rewards">
+          Explore Rewards
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Category Shortcuts Carousel -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-primary font-bold">Categories</h3>
+<span class="font-label-md text-label-md text-secondary font-bold cursor-pointer" id="view-all-cats">View All</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto pb-1.5 -mx-margin px-margin scrollbar-none" id="category-bar">
+<!-- Active Chip -->
+<button class="category-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-sm font-semibold active:scale-95 transition-all" data-category="all" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>All Rewards</span>
+</button>
+<button class="category-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-lg text-label-lg shadow-sm hover:bg-surface-container font-medium active:scale-95 transition-all" data-category="shopping" type="button">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Shopping</span>
+</button>
+<button class="category-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-lg text-label-lg shadow-sm hover:bg-surface-container font-medium active:scale-95 transition-all" data-category="fnb" type="button">
+<span class="material-symbols-outlined text-[18px]">coffee</span>
+<span>Food &amp; Beverage</span>
+</button>
+<button class="category-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-lg text-label-lg shadow-sm hover:bg-surface-container font-medium active:scale-95 transition-all" data-category="travel" type="button">
+<span class="material-symbols-outlined text-[18px]">flight</span>
+<span>Travel</span>
+</button>
+<button class="category-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-lg text-label-lg shadow-sm hover:bg-surface-container font-medium active:scale-95 transition-all" data-category="entertainment" type="button">
+<span class="material-symbols-outlined text-[18px]">confirmation_number</span>
+<span>Entertainment</span>
+</button>
+<button class="category-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-lg text-label-lg shadow-sm hover:bg-surface-container font-medium active:scale-95 transition-all" data-category="lifestyle" type="button">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>Lifestyle</span>
+</button>
+<button class="category-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-lg text-label-lg shadow-sm hover:bg-surface-container font-medium active:scale-95 transition-all" data-category="vouchers" type="button">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+<span>Vouchers</span>
+</button>
+</div>
+</div>
+<!-- Featured Rewards Section Header -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<h3 class="font-title-md text-title-md text-primary font-bold">Featured Rewards</h3>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-micro text-label-micro font-extrabold">POPULAR</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Sort: <strong class="text-primary">Recommended</strong></span>
+</div>
+<!-- 2-Column E-Commerce Product Grid -->
+<div class="grid grid-cols-2 gap-space-md" id="rewards-catalog">
+<!-- Card 1: Rp50K Shopping Voucher -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest shadow-[0_4px_16px_-2px_rgba(0,59,115,0.06),0_1px_3px_0_rgba(0,59,115,0.04)] overflow-hidden relative group" data-reward-id="shopping-50k" data-category="shopping">
+<!-- Thumbnail & Badges -->
+<div class="relative w-full aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Modern Indonesian e-commerce shopping bag and gift card voucher on an energetic oceanic blue background, 3d rendering, high vibrancy, commercial clean studio lighting, soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOaEH0xTeSpewfC_WBA4pLDMtwMV3Vv1epfBxUIajqgIiYSnMegOzPUUZz96glv0mmIlNMZ9BeCyreTCXGX0w9UwPTsmzShoVLFzAIN7yh6ghuMWEG_gSv70OXehDTNnAAbmDeePxEr3A3cqgjy_7bKT-AGAOPvfDBH-reMnLT6G2bOAfDSJ-gqmbWiE6h6NYuNAPsi9WXg5cSYi2WL_QGLNzHSUhvmV_-cxP5qSQx--0FuO4k1g_0Ug"/>
+<!-- Badge Top-Left -->
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-micro text-label-micro font-extrabold shadow-sm">
+          Best Value
+        </span>
+<!-- Favorite Heart Button -->
+<button aria-label="Add to favorites" class="favorite-btn absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-bright/90 backdrop-blur-md flex items-center justify-center text-outline hover:text-error active:scale-90 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<!-- Merchant Tag -->
+<div class="absolute bottom-2 left-2 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-bright/90 backdrop-blur-md shadow-xs">
+<span class="material-symbols-outlined text-[12px] text-secondary">store</span>
+<span class="font-label-micro text-label-micro font-bold text-primary">Blibli / Toped</span>
+</div>
+</div>
+<!-- Card Content -->
+<div class="p-space-sm flex flex-col flex-1 justify-between space-y-space-xs">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary font-bold line-clamp-2 leading-tight">Rp50K Shopping Voucher - Blibli / Tokopedia</h4>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-micro text-label-micro">
+<span class="material-symbols-outlined text-[12px] text-tertiary-container fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.9</span>
+<span>•</span>
+<span>Terjual 3.4k</span>
+</div>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-1">
+<span class="text-xs">🪙</span>
+<span class="font-title-md text-title-md font-extrabold text-tertiary-container leading-none">2,500</span>
+</div>
+<span class="font-label-micro text-label-micro text-outline line-through">Rp50.000</span>
+</div>
+<!-- Progress status: Needs 50 more coins -->
+<div class="space-y-1 bg-surface-container-low p-1.5 rounded-lg">
+<div class="flex justify-between items-center font-label-micro text-label-micro">
+<span class="text-on-surface-variant font-medium">Need 50 more Coins</span>
+<span class="text-primary font-bold">98%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 98%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Kopi Kenangan / Coffee Voucher -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest shadow-[0_4px_16px_-2px rgba(0,59,115,0.06),0_1px_3px_0_rgba(0,59,115,0.04)] overflow-hidden relative group" data-reward-id="kopi-voucher" data-category="fnb">
+<!-- Thumbnail & Badges -->
+<div class="relative w-full aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Artisanal iced coffee cup with caramel swirl and coffee beans on slate table, soft natural daylight, shallow depth of field, warm cozy aesthetic, premium Indonesian cafe vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzY4BSD7C1t28HL2eA6MgyibvNS07l7peu3KMYwXNjY-ygcFX3QKv4GRxB7foiy9P-tUVPVXZ2_iAwhSM_DnOi6RSykoiUTzGktkj25UWDzKmoFOoHHMfuWAK1t3FpO43PxJQqIYRWdLadVz3ys3yHJpHcpinMHs8yq6S5CDEDJUoVHDFIfcmPiUzyl1di8YHaNFbi9NQ8nu7Oth9etcDz2iJE5qUaKhWJ8wrHwkADPtIaY0-8SYKqew"/>
+<!-- Badge Top-Left -->
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-micro text-label-micro font-extrabold shadow-sm">
+          Popular
+        </span>
+<!-- Favorite Heart Button -->
+<button aria-label="Add to favorites" class="favorite-btn absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-bright/90 backdrop-blur-md flex items-center justify-center text-outline hover:text-error active:scale-90 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<!-- Merchant Tag -->
+<div class="absolute bottom-2 left-2 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-bright/90 backdrop-blur-md shadow-xs">
+<span class="material-symbols-outlined text-[12px] text-secondary">local_cafe</span>
+<span class="font-label-micro text-label-micro font-bold text-primary">Kopi Kenangan</span>
+</div>
+</div>
+<!-- Card Content -->
+<div class="p-space-sm flex flex-col flex-1 justify-between space-y-space-xs">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary font-bold line-clamp-2 leading-tight">Kopi Kenangan / Coffee Voucher 1 Regular</h4>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-micro text-label-micro">
+<span class="material-symbols-outlined text-[12px] text-tertiary-container fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.8</span>
+<span>•</span>
+<span>Terjual 1.2k</span>
+</div>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-1">
+<span class="text-xs">🪙</span>
+<span class="font-title-md text-title-md font-extrabold text-tertiary-container leading-none">1,200</span>
+</div>
+<span class="font-label-micro text-label-micro text-outline line-through">Rp25.000</span>
+</div>
+<!-- Status: Ready to redeem -->
+<div class="flex items-center justify-center gap-1 py-1 px-2 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-micro text-label-micro font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Ready to Redeem! ✓
+          </div>
+</div>
+</div>
+</div>
+<!-- Card 3: XXI Cinema Movie Ticket -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest shadow-[0_4px_16px_-2px_rgba(0,59,115,0.06),0_1px_3px_0_rgba(0,59,115,0.04)] overflow-hidden relative group" data-reward-id="xxi-ticket" data-category="entertainment">
+<!-- Thumbnail & Badges -->
+<div class="relative w-full aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Modern movie theater tickets with popcorn bucket and golden cinema lights, cinematic composition, deep midnight blue and gold tones, crisp product photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVkln2mK6Ib-LSuYpZVDGih9BDxdwd30_sN4nVaRyv6Tt8qBoYwiwnJL1-WU51Lzuvtg0kEfV4m52HUXz_5cF6Emc6CfN-BDWyYbjPfzyLiY6jPKxUydHrUhyc_NXiuWtv4aDuCCGOaucR031_fQzgsBKI91dhH9ZvRo05vKcb5Z2rgcms1zi7PEsGIUOCQbSy9M2_WP25EYXgeEfcpesPwXfAIaY-SD85pCc8QKGwtrM7XEAOCPC8tg"/>
+<!-- Badge Top-Left -->
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-error-container text-on-error-container font-label-micro text-label-micro font-extrabold shadow-sm">
+          Limited Stock
+        </span>
+<!-- Favorite Heart Button -->
+<button aria-label="Add to favorites" class="favorite-btn absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-bright/90 backdrop-blur-md flex items-center justify-center text-outline hover:text-error active:scale-90 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<!-- Merchant Tag -->
+<div class="absolute bottom-2 left-2 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-bright/90 backdrop-blur-md shadow-xs">
+<span class="material-symbols-outlined text-[12px] text-secondary">theaters</span>
+<span class="font-label-micro text-label-micro font-bold text-primary">Cinema XXI</span>
+</div>
+</div>
+<!-- Card Content -->
+<div class="p-space-sm flex flex-col flex-1 justify-between space-y-space-xs">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary font-bold line-clamp-2 leading-tight">XXI Cinema Deluxe Movie Ticket 1 Pax</h4>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-micro text-label-micro">
+<span class="material-symbols-outlined text-[12px] text-tertiary-container fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">5.0</span>
+<span>•</span>
+<span>Terjual 890</span>
+</div>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-1">
+<span class="text-xs">🪙</span>
+<span class="font-title-md text-title-md font-extrabold text-tertiary-container leading-none">2,000</span>
+</div>
+<span class="font-label-micro text-label-micro text-outline line-through">Rp50.000</span>
+</div>
+<!-- Status: Ready to redeem -->
+<div class="flex items-center justify-center gap-1 py-1 px-2 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-micro text-label-micro font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Ready to Redeem! ✓
+          </div>
+</div>
+</div>
+</div>
+<!-- Card 4: Rp100K MAP Club Voucher -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest shadow-[0_4px_16px_-2px_rgba(0,59,115,0.06),0_1px_3px_0_rgba(0,59,115,0.04)] overflow-hidden relative group" data-reward-id="map-100k" data-category="lifestyle">
+<!-- Thumbnail & Badges -->
+<div class="relative w-full aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Luxury fashion shopping bags and gift card in front of a sleek boutique store window, clean elegant lighting, cool navy and gold accents, aspirational lifestyle photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYKwpnG_HmEGXO_x7ogW4w2AhNB1ZvvU7ezReQ4ShpDMiBwUGG03H3SEC1AbqryDqAIbxqbsFuqrGz_ukGBY9O4pHqHEM5vPsw60qlMRPIW2Z9zqidlv1eaYSz3v2AJq17-AoIkPSOWFQvFrsOagrAiNZ_hNyK8Hd71tcAPZVssdJNKE3OfkdgmsQaO2M8AXT7wlrD--ZdUX_J2jAp1w-AXfCMutwmKKesFm2ubfmFOYsV4cMraD5WTA"/>
+<!-- Badge Top-Left -->
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-surface-variant text-primary font-label-micro text-label-micro font-extrabold shadow-sm">
+          Recommended
+        </span>
+<!-- Favorite Heart Button -->
+<button aria-label="Add to favorites" class="favorite-btn absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-bright/90 backdrop-blur-md flex items-center justify-center text-outline hover:text-error active:scale-90 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<!-- Merchant Tag -->
+<div class="absolute bottom-2 left-2 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-bright/90 backdrop-blur-md shadow-xs">
+<span class="material-symbols-outlined text-[12px] text-secondary">card_membership</span>
+<span class="font-label-micro text-label-micro font-bold text-primary">MAP Club</span>
+</div>
+</div>
+<!-- Card Content -->
+<div class="p-space-sm flex flex-col flex-1 justify-between space-y-space-xs">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary font-bold line-clamp-2 leading-tight">Rp100K Lifestyle Voucher - MAP Club</h4>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-micro text-label-micro">
+<span class="material-symbols-outlined text-[12px] text-tertiary-container fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.9</span>
+<span>•</span>
+<span>Terjual 2.1k</span>
+</div>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-1">
+<span class="text-xs">🪙</span>
+<span class="font-title-md text-title-md font-extrabold text-tertiary-container leading-none">4,500</span>
+</div>
+<span class="font-label-micro text-label-micro text-outline line-through">Rp100.000</span>
+</div>
+<!-- Progress status: Almost unlocked -->
+<div class="space-y-1 bg-surface-container-low p-1.5 rounded-lg">
+<div class="flex justify-between items-center font-label-micro text-label-micro">
+<span class="text-on-surface-variant font-medium">Almost unlocked</span>
+<span class="text-primary font-bold">54%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 54%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5: KAI Train Ticket Voucher Rp50K -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest shadow-[0_4px_16px_-2px_rgba(0,59,115,0.06),0_1px_3px_0_rgba(0,59,115,0.04)] overflow-hidden relative group" data-reward-id="kai-50k" data-category="travel">
+<!-- Thumbnail & Badges -->
+<div class="relative w-full aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Modern high speed Indonesian train passing through lush scenic green mountains, golden hour sun reflection on metallic train body, vibrant travel documentary style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUIRWoF7ZR_e_5l4ATD2dqV9Y2JFHnuYk4HcoK0u3ciwR5j4_qZLLTvUNTHw6fQpzB-xOqm3pt7whl1DCtyY8N7QybCwRwQgiwAmO8EsexVZ_karsyk14KdQ5CZRM-EyEjzJLKK4u-cdWMRemR78mOFCHO6nlIOBrbT_j5NiPGchlpfrYtJmuPD9cR0bxQvocbGSIbWxctrP73F-a5M9zf_u6TzTwp4JKjNLxSnyZpGAyxDw9QHkOvWw"/>
+<!-- Badge Top-Left -->
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-secondary text-on-secondary font-label-micro text-label-micro font-extrabold shadow-sm">
+          Travel Special
+        </span>
+<!-- Favorite Heart Button -->
+<button aria-label="Add to favorites" class="favorite-btn absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-bright/90 backdrop-blur-md flex items-center justify-center text-outline hover:text-error active:scale-90 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<!-- Merchant Tag -->
+<div class="absolute bottom-2 left-2 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-bright/90 backdrop-blur-md shadow-xs">
+<span class="material-symbols-outlined text-[12px] text-secondary">train</span>
+<span class="font-label-micro text-label-micro font-bold text-primary">KAI Access</span>
+</div>
+</div>
+<!-- Card Content -->
+<div class="p-space-sm flex flex-col flex-1 justify-between space-y-space-xs">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary font-bold line-clamp-2 leading-tight">KAI Train Ticket Voucher Rp50K All Routes</h4>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-micro text-label-micro">
+<span class="material-symbols-outlined text-[12px] text-tertiary-container fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.7</span>
+<span>•</span>
+<span>Terjual 750</span>
+</div>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-1">
+<span class="text-xs">🪙</span>
+<span class="font-title-md text-title-md font-extrabold text-tertiary-container leading-none">5,000</span>
+</div>
+<span class="font-label-micro text-label-micro text-outline">Direct Disc</span>
+</div>
+<button class="w-full py-1 px-2 rounded-lg bg-surface-container-high text-primary font-label-micro text-label-micro font-bold hover:bg-surface-variant active:scale-95 transition-transform text-center" type="button">
+            View Details
+          </button>
+</div>
+</div>
+</div>
+<!-- Card 6: Music Concert & Event Ticket Pass -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest shadow-[0_4px_16px_-2px_rgba(0,59,115,0.06),0_1px_3px_0_rgba(0,59,115,0.04)] overflow-hidden relative group" data-reward-id="concert-pass" data-category="vouchers">
+<!-- Thumbnail & Badges -->
+<div class="relative w-full aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Euphoric live music concert crowd with stage lasers, glowing wristbands, deep blue and electric violet ambient lights, high energy festival atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyb-SV0xlbEtKXDET0191Pi_oVLGoZICe7nOfyf2d8_qef97qgO5b8T8HaCiDoYvzSdczCxE3PcqjYL17_dZgmtxuuXwSXI5nXrkSimJ7sk7o3yfB_sz33CzLaJDDOGtB4dGb0CG7wt9IMlBMoAwFL9IBsuyynGDzNipEjnCW8ESvK0FVhLMHic1O-bgAgPe6QWmFVtIOovVrNNFg1GUxIaZO1t6XyyqPv6tyKVIs96k58lB2yuptRLg"/>
+<!-- Badge Top-Left -->
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-primary text-on-primary font-label-micro text-label-micro font-extrabold shadow-sm">
+          Exclusive VIP
+        </span>
+<!-- Favorite Heart Button -->
+<button aria-label="Add to favorites" class="favorite-btn absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-bright/90 backdrop-blur-md flex items-center justify-center text-outline hover:text-error active:scale-90 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<!-- Merchant Tag -->
+<div class="absolute bottom-2 left-2 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-bright/90 backdrop-blur-md shadow-xs">
+<span class="material-symbols-outlined text-[12px] text-secondary">festival</span>
+<span class="font-label-micro text-label-micro font-bold text-primary">LiveNation ID</span>
+</div>
+</div>
+<!-- Card Content -->
+<div class="p-space-sm flex flex-col flex-1 justify-between space-y-space-xs">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary font-bold line-clamp-2 leading-tight">Music Concert &amp; Event Ticket Pass</h4>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-micro text-label-micro">
+<span class="material-symbols-outlined text-[12px] text-tertiary-container fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">5.0</span>
+<span>•</span>
+<span>Terjual 320</span>
+</div>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-1">
+<span class="text-xs">🪙</span>
+<span class="font-title-md text-title-md font-extrabold text-tertiary-container leading-none">8,000</span>
+</div>
+<span class="font-label-micro text-label-micro text-outline">Priority Pass</span>
+</div>
+<button class="w-full py-1 px-2 rounded-lg bg-primary-container text-on-primary font-label-micro text-label-micro font-bold hover:bg-primary active:scale-95 transition-transform text-center" type="button" id="save-up-coins">
+            Save Up Coins
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Gamified Ways to Earn More Floating Banner -->
+<div class="rounded-2xl bg-surface-container p-space-md flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container/40 flex items-center justify-center text-on-secondary-container text-lg font-bold">
+        ⚡
+      </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-bold leading-tight">Need more Coins?</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Pay with QRIS &amp; complete weekly missions</span>
+</div>
+</div>
+<button class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-md text-label-md font-bold shadow-xs active:scale-95 transition-transform" type="button" data-go="missions">
+      Missions
+    </button>
+</div>
+</div>
+<script>
+  (function initMarketplaceInteractions() {
+    // Category chip toggle
+    const chips = document.querySelectorAll('.category-chip');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary');
+          c.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        });
+        chip.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        chip.classList.add('bg-primary', 'text-on-primary');
+      });
+    });
+
+    // Favorite button toggle with tactile feedback
+    const favButtons = document.querySelectorAll('.favorite-btn');
+    favButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const icon = btn.querySelector('.material-symbols-outlined');
+        const isFav = btn.getAttribute('data-active') === 'true';
+        if (isFav) {
+          btn.setAttribute('data-active', 'false');
+          btn.classList.remove('text-error');
+          btn.classList.add('text-outline');
+          icon.style.fontVariationSettings = "'FILL' 0";
+        } else {
+          btn.setAttribute('data-active', 'true');
+          btn.classList.remove('text-outline');
+          btn.classList.add('text-error');
+          icon.style.fontVariationSettings = "'FILL' 1";
+        }
+      });
+    });
+
+    // Search bar clear toggle
+    const searchInput = document.getElementById('marketplace-search');
+    const clearBtn = document.getElementById('clear-search');
+    if (searchInput && clearBtn) {
+      searchInput.addEventListener('input', (e) => {
+        if (e.target.value.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+      });
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearBtn.classList.add('hidden');
+        searchInput.focus();
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,37,77,0.06)]" data-active-classes="text-primary font-semibold [&amp;_span.indicator]:opacity-100"><div class="flex justify-around items-center h-16 px-space-xs relative max-w-[430px] mx-auto"><a class="flex flex-col items-center justify-center flex-1 h-full text-on-surface-variant transition-colors group" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">account_balance</span><span class="font-label-micro text-label-micro mt-1">Home</span><span class="indicator opacity-0 w-1.5 h-1.5 rounded-full bg-primary mt-0.5 transition-opacity"></span></a><a class="flex flex-col items-center justify-center flex-1 h-full text-on-surface-variant transition-colors group" data-path="activity" href="#"><span class="material-symbols-outlined text-[24px]">receipt_long</span><span class="font-label-micro text-label-micro mt-1">Activity</span><span class="indicator opacity-0 w-1.5 h-1.5 rounded-full bg-primary mt-0.5 transition-opacity"></span></a><div class="relative flex flex-col items-center justify-center flex-1"><a class="-top-6 absolute w-14 h-14 rounded-full bg-gradient-to-tr from-primary via-primary-container to-secondary-container flex items-center justify-center text-on-primary shadow-[0_8px_24px_rgba(65,190,253,0.45)] active:scale-95 transition-transform" data-soon="QRIS Scanner" href="#"><span class="material-symbols-outlined text-[30px]">qr_code_scanner</span></a><span class="font-label-micro text-label-micro font-bold text-primary mt-8 tracking-wider">QRIS</span></div><a aria-current="page" class="flex flex-col items-center justify-center flex-1 h-full transition-colors group text-primary font-semibold [&amp;_span.indicator]:opacity-100" data-path="for-you" href="#"><span class="material-symbols-outlined text-[24px]">loyalty</span><span class="font-label-micro text-label-micro mt-1">For You</span><span class="indicator opacity-0 w-1.5 h-1.5 rounded-full bg-primary mt-0.5 transition-opacity"></span></a><a class="flex flex-col items-center justify-center flex-1 h-full text-on-surface-variant transition-colors group" data-soon="My Account" href="#"><span class="material-symbols-outlined text-[24px]">person</span><span class="font-label-micro text-label-micro mt-1">Account</span><span class="indicator opacity-0 w-1.5 h-1.5 rounded-full bg-primary mt-0.5 transition-opacity"></span></a></div></nav></body></html>
